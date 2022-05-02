@@ -55,6 +55,8 @@
      <Compile Include="Assets\Scripts\Quiz\QuizManager.cs" />
      <Compile Include="Assets\Scripts\Quiz\LeituraDeArquivoDasQuestões\ConverterArquivo.cs" />
      <Compile Include="Assets\Scripts\Quiz\TimeManager.cs" />
+     <Compile Include="Assets\Scripts\ButtonsController.cs" />
+     <Compile Include="Assets\Scripts\Quiz\LeituraDeArquivoDasQuestões\ConverterToJson.cs" />
      <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />
      <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Mobile Overlay.shader" />
      <None Include="Assets\TextMesh Pro\Shaders\TMP_Bitmap.shader" />

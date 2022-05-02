@@ -1,0 +1,48 @@
+{"quizQuestions":
+	[
+		{
+			"theme":"ICF "
+			,"question":"Duas bolas de metal são do mesmo tamanho mas uma pesa o dobro da outra. As bolas são largadas do telhado de um edifício ao mesmo tempo. Quanto ao tempo que as bolas demoram a alcançar o chão"
+			,"alternative":[
+				"A bola mais pesada demora cerca de metade do tempo que a bola mais leve demora.", 
+				"A bola mais leve demora cerca de metade do tempo que a bola mais pesada demora.", 
+				"Mais ou menos o mesmo tempo para ambas as bolas.", 
+				"Consideravelmente menos tempo para a bola mais pesada, mas não necessariamente metade.",
+				"Consideravelmente menos tempo para a bola mais leve, mas não necessariamente metade."]
+			,"correctAnswer":"2"
+			},
+			{
+			"theme":"ICF"
+			,"question":"As duas bolas de metal do problema anterior rolam para fora de uma mesa horizontal com a mesma velocidade. Nesta situação:"
+			,"alternative":[
+				"Ambas as bolas atingem o chão aproximadamente à mesma distância horizontal da base da mesa.", 
+				"Em relação à distância horizontal à base da mesa, a bola mais pesada atinge o chão a cerca de metade da distância da bola mais leve", 
+				"Em relação à distância horizontal à base da mesa, a bola mais leve atinge o chão a cerca de metade da distância da bola mais pesada.", 
+				"A bola mais pesada atinge o chão consideravelmente mais perto da base da mesa do que a bola mais leve, mas não necessariamente metade da distância.",
+				"A bola mais leve atinge o chão consideravelmente mais perto da base da mesa do que a bola mais leve, mas não necessariamente metade da distância."]
+			,"correctAnswer":"0"
+			},
+			{
+			"theme":"ICF "
+			,"question":"Uma pedra largada do telhado de um edifício:"
+			,"alternative":[
+				"Adquire uma velocidade máxima logo após ser largada e cai a uma velocidade constante depois disso.", 
+				"Vai aumentando de velocidade enquanto cai, porque a atração gravítica se torna mais forte à medida que a pedra se aproxima da superfície da terra.", 
+				"Vai aumentando de velocidade enquanto cai, devido à força da gravidade quase constante que atua sobre ela.", 
+				"Cai por causa da tendência natural de todos os objetos ficarem em repouso na superfície da terra",
+				"Cai por causa dos efeitos combinados da força da gravidade e da força do ar que a empurram para baixo."]
+			,"correctAnswer":"2"
+			},
+			{
+			"theme":"ICF "
+			,"question":"Um camião colide de frente com um carro ligeiro. Durante a colisão:"
+			,"alternative":[
+				"O camião exerce uma força maior no carro do que o carro exerce no camião.", 
+				"O carro exerce uma força maior no camião do que o camião exerce no carro.", 
+				"Nenhum exerce uma força no outro, o carro despedaça-se simplesmente porque está no caminho do camião", 
+				"O camião exerce uma força no carro, mas o carro não exerce uma força no camião.",
+				"O camião exerce a mesma força no carro que o carro exerce no camião."]
+			,"correctAnswer":"4"
+		}
+	]
+}

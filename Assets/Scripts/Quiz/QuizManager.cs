@@ -48,11 +48,13 @@ public class QuizManager : MonoBehaviour
     public GameObject tutorialScreen;
 
     public Text scoreText;
-    private TimeManager timeManager;
+    //private TimeManager timeManager;
 
     [SerializeField] private string[] endOfQuizText;
     public Text endOfQuizBalloon;
     #endregion
+
+    [SerializeField] public string tempdata;
 
     #region Set/Get das variáveis
     public void SetDificulty(int value)
@@ -78,7 +80,24 @@ public class QuizManager : MonoBehaviour
             Destroy(gameObject);
         }
 
-        timeManager = GameObject.Find("TimeManager").GetComponent<TimeManager>();
+        PrepareQuizStart();
+
+        tempdata = Application.persistentDataPath;
+    }
+
+    private void Start()
+    {
+        SetQuestionsToDo();
+        //RandomizeAlternatives();
+        //PrepareNewQuestion();
+    }
+
+    /// <summary>
+    /// Função que prepara o inicio do quiz
+    /// </summary>
+    public void PrepareQuizStart()
+    {
+        //timeManager = GameObject.Find("TimeManager").GetComponent<TimeManager>();
 
         /// Cria uma lista de perguntas realizadas e respostas dadas pelo player
         questionAndAnswer = new List<QuestionAndAnswer>();
@@ -91,13 +110,6 @@ public class QuizManager : MonoBehaviour
 
         /// Reinicia a lista de valores que podem ser sorteados
         RestartNumberList(ref numbersList, questionGroup[dificulty].GetLenght());
-    }
-
-    private void Start()
-    {
-        SetQuestionsToDo();
-        RandomizeAlternatives();
-        //PrepareNewQuestion();
     }
 
     /// <summary>
@@ -118,7 +130,11 @@ public class QuizManager : MonoBehaviour
             questionAndAnswer[index].SetDificultyLevel(dificulty);
 
             /// Sorteia a pergunta dentre as possíveis da lista
-            questionSelected = RandomQuestionNumber();
+            //questionSelected = RandomQuestionNumber();
+
+            questionSelected = numbersList[0];
+            numbersList.Remove(questionSelected);
+
             /// Salva qual a pergunta que será realizada
             questionAndAnswer[index].SetQuestionNumber(questionSelected);
             /// Salva a data e hora que a pergunta foi selecionada
@@ -153,7 +169,7 @@ public class QuizManager : MonoBehaviour
 
         UnblockButtons();
         
-        timeManager.StartTimer();
+        //timeManager.StartTimer();
     }
 
     /// <summary>
@@ -164,7 +180,7 @@ public class QuizManager : MonoBehaviour
     {
         BlockButtons();
 
-        timeManager.EndTimer();
+        //timeManager.EndTimer();
 
         StartCoroutine(VerifyAnswer(value));
     }
@@ -428,6 +444,18 @@ public class QuizManager : MonoBehaviour
         {
             qtyQuestionsToDo = questionGroup[dificulty].GetLenght();
         }
+    }
+
+    public void LoadDataFromFile()
+    {
+
+    }
+
+    public void SaveDataToFile()
+    {
+        ConverterToJson<List<QuestionAndAnswer>> converter = new ConverterToJson<List<QuestionAndAnswer>>();
+        tempdata = converter.Convert(questionAndAnswer);
+        System.IO.File.WriteAllText(Application.persistentDataPath + "/Dados.json", tempdata);
     }
     #endregion
 }
