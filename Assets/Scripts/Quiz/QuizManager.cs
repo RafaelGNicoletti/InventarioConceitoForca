@@ -52,6 +52,8 @@ public class QuizManager : MonoBehaviour
 
     [SerializeField] private string[] endOfQuizText;
     public Text endOfQuizBalloon;
+
+    [SerializeField] public Slider SliderQualitativo;
     #endregion
 
     [SerializeField] public string tempdata;
@@ -453,9 +455,9 @@ public class QuizManager : MonoBehaviour
 
     public void SaveDataToFile()
     {
-        ConverterToJson<List<QuestionAndAnswer>> converter = new ConverterToJson<List<QuestionAndAnswer>>();
-        tempdata = converter.Convert(questionAndAnswer);
-        System.IO.File.WriteAllText(Application.persistentDataPath + "/Dados.json", tempdata);
+        ConverterArquivo converter = new ConverterArquivo();
+        converter.SalvarJson(questionAndAnswer, SliderQualitativo.value);
+        //System.IO.File.WriteAllText(Application.persistentDataPath + "/Dados.json", tempdata);
     }
     #endregion
 }

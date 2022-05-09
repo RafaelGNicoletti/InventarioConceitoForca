@@ -31,10 +31,21 @@ public class ConverterArquivo : MonoBehaviour
         perguntas.SetQuizQuestions(temp);
     }
 
-    //public void SalvarJson(QuestionAndAnswer dados)
-    //{
-    //    ConverterToJson converter = new ConverterToJson();
-    //    string tempData = Converter.ConverterToJson(dados);
-    //    System.IO.File.WriteAllText(Application.persistentDataPath + "/Dados.json", tempData);
-    //}
+    public void SalvarJson(List<QuestionAndAnswer> dados, float qualitativo)
+    {
+        ConverterToJson converter = new ConverterToJson();
+        string tempData = "";
+        foreach (QuestionAndAnswer question in dados)
+        {
+            tempData += "\n" + converter.Convert(question);
+        }
+
+        tempData += "\nQualitativo " + qualitativo.ToString();
+
+        string filename = "/Dados-" + System.DateTime.Now.ToOADate() + ".json";
+
+        //string filename = "/Dados-" + System.DateTime.Now.Day + "-" + System.DateTime.Now.Month + "-" + System.DateTime.Now.Year + "-" + System.DateTime.Now.TimeOfDay + ".json";
+
+        System.IO.File.WriteAllText(Application.persistentDataPath + filename, tempData);
+    }
 }

@@ -12,6 +12,8 @@ public class Pergunta
     [SerializeField] private string question;
     [SerializeField] private string[] alternative;
     [SerializeField] private int correctAnswer;
+    [SerializeField] private bool isQuestionPic;
+    [SerializeField] private bool isAlternativePic;
 
     public Pergunta(int i)
     {
@@ -81,6 +83,27 @@ public class Pergunta
     {
         return correctAnswer;
     }
+
+    public bool GetIsQuestionPic()
+    {
+        return isQuestionPic;
+    }
+
+    public void SetIsQuestionPic(bool value)
+    {
+        isQuestionPic = value;
+    }
+
+    public bool GetisAlternativePic()
+    {
+        return isAlternativePic;
+    }
+
+    public void SetisAlternativePic(bool value)
+    {
+        isAlternativePic = value;
+    }
+
     #endregion
 
     public void OverrideQuestion(Pergunta newQuestion)

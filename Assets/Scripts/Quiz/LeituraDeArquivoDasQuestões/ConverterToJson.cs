@@ -5,9 +5,9 @@ using UnityEngine;
 /// <summary>
 /// Classe que converte o dado em um JSON
 /// </summary>
-public class ConverterToJson<T>
+public class ConverterToJson
 {
-    public string Convert(T data)
+    public string Convert(QuestionAndAnswer data)
     {
         return JsonUtility.ToJson(data);
     }
