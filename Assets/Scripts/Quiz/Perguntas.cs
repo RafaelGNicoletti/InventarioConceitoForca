@@ -41,6 +41,16 @@ public class Perguntas : ScriptableObject
         }
     }
 
+    public bool GetIsQuestionPic(int index)
+    {
+        return quizQuestions[index].GetIsQuestionPic();
+    }
+
+    public bool GetIsAlternativePic(int index)
+    {
+        return quizQuestions[index].GetisAlternativePic();
+    }
+
     #endregion
 }
 
